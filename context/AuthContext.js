@@ -4,6 +4,7 @@ import React, { useEffect, useState, createContext } from "react";
 import httpClient from "../libs/httpClient";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import LoadingOverlay from "@/components/LoadingOverlay";
 
 export const AuthContext = createContext();
 
@@ -105,7 +106,9 @@ export const AuthContextProvider = (props) => {
       }}
     >
       {isAuthenticated === null || loading || loadingCheck ? (
-        <LoadingPage />
+        <LoadingOverlay
+          loading={isAuthenticated === null || loading || loadingCheck}
+        />
       ) : (
         <>{props.children}</>
       )}
@@ -117,7 +120,7 @@ export default AuthContextProvider;
 
 const LoadingPage = () => {
   return (
-    <div className="min-h-[100vh] h-full w-full flex justify-center items-center">
+    <div className="flex h-full min-h-[100vh] w-full items-center justify-center">
       <span className="sr-only">Loading...</span>
     </div>
   );

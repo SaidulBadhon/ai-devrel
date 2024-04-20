@@ -64,7 +64,13 @@ export default function Page({ params }) {
   return (
     <div className="container relative mx-auto">
       {/* Chat Container */}
-      <div className="flex flex-col h-screen">
+      <div
+        // className="flex h-screen flex-col"
+        className="flex h-screen flex-col"
+        style={{
+          height: "max(calc(100vh - 4rem), 800px)",
+        }}
+      >
         {/* Chat Header */}
         <ChatHeader
           isActive={true}

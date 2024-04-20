@@ -15,7 +15,9 @@
     "querystring": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
-    "sonner": "^1.4.41"
+    "react-icons": "^5.1.0",
+    "sonner": "^1.4.41",
+    "use-debounce": "^10.0.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.12",
@@ -25,6 +27,8 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.2",
     "postcss": "^8",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.13",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

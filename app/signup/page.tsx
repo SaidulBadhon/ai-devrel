@@ -9,24 +9,22 @@ export default function Page() {
     // scope: "user:email,repo,read:org",
   };
   const githubQueryUrl = `https://github.com/login/oauth/authorize?${stringify(
-    queryParams
+    queryParams,
   )}`;
 
   return (
-    <div className="container relative mx-auto px-4 flex items-center py-8 gap-4 justify-center flex-col min-h-[100vh] h-full w-full">
-      <h1 className="text-2xl text-cyan-600 font-bold absolute top-4 left-4 color ">
-        AI DevRel
-      </h1>
-
-      {/* <div className="p-4 flex flex-col justify-center items-center gap-2 bg-slate-100 border-stone-300 border rounded-xl"> */}
-      {/* <h1 className="text-2xl  font-semibold mb-4">Log in</h1> */}
-
+    <div
+      className="container relative mx-auto flex h-full min-h-[100vh] w-full flex-col items-center justify-center gap-4 px-4 py-8"
+      style={{
+        minHeight: "max(calc(100vh - 4rem), 800px)",
+      }}
+    >
       <a
         href={githubQueryUrl}
-        className="flex justify-center items-center border border-cyan-900/50
-         rounded-md px-8 py-1 mt-4 gap-4 transition-all 
+        className="mt-4 flex items-center justify-center gap-4
+         rounded-md border border-cyan-900/50 bg-cyan-600/5 px-8 py-1 
          
-         bg-cyan-600/5 
+         transition-all 
          hover:bg-cyan-600/50 hover:text-white 
          active:bg-cyan-600 active:text-white
          "
@@ -43,9 +41,8 @@ export default function Page() {
           Log in
         </Link>
       </p>
-      {/* </div> */}
 
-      <p className="text-sm text-gray-500 mt-8 absolute bottom-4">
+      <p className="absolute bottom-4 mt-8 text-sm text-gray-500">
         By logging in, you agree to our{" "}
         <a
           href="https://jutsu.ai/terms-and-conditions"
