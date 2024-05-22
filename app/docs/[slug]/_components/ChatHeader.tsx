@@ -1,4 +1,4 @@
-export default function ChatHeader(props: PropsType) {
+export default function ChatHeader(props: any) {
   const { title, avatar, isActive } = props;
 
   return (

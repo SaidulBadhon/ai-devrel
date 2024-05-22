@@ -58,25 +58,39 @@ let messages = [
   { _id: "36", message: "I'm good too", sender: "me" },
 ];
 
+const sidebarData = [
+  "AI DevRel",
+  "General",
+  "Announcements",
+  "Explore",
+  "Design",
+  "Development",
+];
+
 export default function Page({ params }) {
   const { slug } = params;
 
   return (
-    <div className="container relative mx-auto">
+    <div className="relative flex">
+      {/* Chat Sidebar */}
+      <div className="hidden h-[calc(100dvh-64px)] w-72 flex-col gap-2 bg-gray-100 p-2 sm:flex dark:bg-gray-950">
+        {sidebarData?.map((item, index) => (
+          <div
+            key={index}
+            className=" rounded-md bg-gray-200 p-2 text-sm dark:bg-gray-800 dark:text-gray-200"
+          >
+            {item}
+          </div>
+        ))}
+      </div>
       {/* Chat Container */}
-      <div
-        // className="flex h-screen flex-col"
-        className="flex h-screen flex-col"
-        style={{
-          height: "max(calc(100vh - 4rem), 800px)",
-        }}
-      >
+      <div className="flex h-[calc(100dvh-64px)] w-full flex-col bg-white dark:bg-gray-900">
         {/* Chat Header */}
-        <ChatHeader
+        {/* <ChatHeader
           isActive={true}
           title={slug || "Docs Chat"}
           avatar="https://source.boringavatars.com/marble/120/me?colors=%233b82f6"
-        />
+        /> */}
 
         {/* Chat Body */}
         <MessageList>

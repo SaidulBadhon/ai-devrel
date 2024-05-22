@@ -13,8 +13,8 @@ export default function MessageList(props: MessageListProps): JSX.Element {
   }, []);
 
   return (
-    <div className="flex-1 p-4 overflow-y-auto">
-      {props.children}
+    <div className="overflow-y-auto px-4">
+      <div className="mx-auto max-w-3xl">{props.children}</div>
       <div ref={endOfMessagesRef} />
     </div>
   );

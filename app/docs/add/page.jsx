@@ -48,70 +48,54 @@ export default function AddDocPage() {
   };
 
   return (
-    <div
-      className="container relative mx-auto flex h-full w-full flex-col items-start justify-start gap-4 py-4"
-      style={{
-        minHeight: "max(calc(100vh - 4rem), 800px)",
-      }}
-    >
-      <LoadingOverlay Loading={Loading} />
+    <section className="dark:bg-gray-900">
+      <div className="container relative mx-auto flex h-[calc(100dvh-64px)] w-full flex-col items-start justify-start gap-4 py-4">
+        <LoadingOverlay Loading={Loading} />
 
-      {/* Back button */}
+        {/* Back button */}
 
-      <div className="">
-        <Link
-          href="/"
-          className="flex items-center gap-2 rounded-md bg-gray-300 px-8 py-2 text-gray-500 transition-all hover:bg-cyan-600 hover:text-white"
-        >
-          <IoArrowBack />
-
-          {/* <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+        <div className="">
+          <Link
+            href="/"
+            className="flex items-center gap-2 rounded-md bg-gray-200 px-8 py-2 text-gray-500 transition-all hover:bg-cyan-600 hover:text-white dark:bg-gray-600 dark:text-gray-200"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg> */}
-          <span>Back</span>
-        </Link>
+            <IoArrowBack />
+            <span>Back</span>
+          </Link>
+        </div>
+
+        <h1 className="text-2xl font-semibold dark:text-gray-100">
+          Let&apos;s add your doc
+        </h1>
+        <p className="text-gray-500">
+          Start by adding your doc name and a featured image
+        </p>
+
+        {page === 1 && (
+          <DetailsSection
+            page={page}
+            setPage={setPage}
+            //
+            name={name}
+            setName={setName}
+            description={description}
+            setDescription={setDescription}
+            setFeaturedImage={setFeaturedImage}
+          />
+        )}
+        {page === 2 && (
+          <SelectRepoSection
+            page={page}
+            setPage={setPage}
+            //
+            owner={owner}
+            setOwner={setOwner}
+            repo={repo}
+            setRepo={setRepo}
+            handleSubmit={handleSubmit}
+          />
+        )}
       </div>
-
-      <h1 className="text-2xl font-semibold">Lat's add your doc</h1>
-      <p className="text-gray-500">
-        Start by adding your doc name and a featured image
-      </p>
-
-      {page === 1 && (
-        <DetailsSection
-          page={page}
-          setPage={setPage}
-          //
-          name={name}
-          setName={setName}
-          description={description}
-          setDescription={setDescription}
-          setFeaturedImage={setFeaturedImage}
-        />
-      )}
-      {page === 2 && (
-        <SelectRepoSection
-          page={page}
-          setPage={setPage}
-          //
-          owner={owner}
-          setOwner={setOwner}
-          repo={repo}
-          setRepo={setRepo}
-          handleSubmit={handleSubmit}
-        />
-      )}
-    </div>
+    </section>
   );
 }

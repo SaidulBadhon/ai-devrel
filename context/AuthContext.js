@@ -11,15 +11,16 @@ export const AuthContext = createContext();
 export const AuthContextProvider = (props) => {
   const router = useRouter();
 
-  const [loadingCheck, setLoadingCheck] = useState(true);
+  const [loadingCheck, setLoadingCheck] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const [isAuthenticated, setIsAuthenticated] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  // const [isAuthenticated, setIsAuthenticated] = useState(null);
   const [user, setUser] = useState();
 
-  useEffect(() => {
-    if (!isAuthenticated) checkAuth();
-  }, []);
+  // useEffect(() => {
+  //   if (!isAuthenticated) checkAuth();
+  // }, []);
 
   const checkAuth = async () => {
     if (isAuthenticated) {

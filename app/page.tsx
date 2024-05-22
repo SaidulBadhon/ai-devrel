@@ -87,25 +87,20 @@ const projects = [
 
 export default function Home() {
   return (
-    <main className="container relative mx-auto flex flex-col items-start ">
-      <h3 className="text-2xl font-semibold text-center py-4">
-        Recent projects
-      </h3>
+    <main className=" py-10 dark:bg-gray-900">
+      <section className="container relative mx-auto flex flex-col items-start px-4">
+        <h3 className="py-4 text-center text-2xl font-semibold dark:text-gray-100">
+          Recent projects
+        </h3>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-          gap: "1rem",
-          width: "100%",
-        }}
-      >
-        <AddProjectButton />
+        <div className="grid w-full grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-4">
+          <AddProjectButton />
 
-        {projects.map((project, index) => (
-          <ProjectItem key={index} {...project} />
-        ))}
-      </div>
+          {projects.map((project, index) => (
+            <ProjectItem key={index} {...project} />
+          ))}
+        </div>
+      </section>
     </main>
   );
 }

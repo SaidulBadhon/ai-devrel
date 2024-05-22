@@ -11,8 +11,8 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="outline-b bg-slate-100">
-      <div className="container relative mx-auto flex h-16 items-center justify-between">
+    <header className="outline-b bg-gray-100 dark:bg-gray-900">
+      <div className="container relative mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-4">
           <Link href="/">
             <h1 className="text-2xl font-bold text-cyan-600">AI DevRel</h1>
@@ -20,7 +20,7 @@ export default function Header() {
 
           <Link
             href="/discover"
-            className={`ml-4 rounded-md ${pathname === "/discover" ? "bg-cyan-600/10 text-cyan-600" : "bg-gray-500/10 text-gray-700"} px-4 py-2 text-sm font-medium transition-all hover:bg-cyan-600/10 hover:text-cyan-600`}
+            className={`ml-4 rounded-md ${pathname === "/discover" ? "bg-cyan-600/10 text-cyan-600" : "bg-gray-500/10 text-gray-700 dark:text-gray-400"} px-4 py-2 text-sm font-medium transition-all hover:bg-cyan-600/10 hover:text-cyan-600`}
           >
             Discover
           </Link>
@@ -28,7 +28,9 @@ export default function Header() {
 
         {isAuthenticated ? (
           <div className="right-4 flex items-center  gap-4">
-            <p className="text-sm text-gray-500">Welcome, {user?.name}</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              Welcome, {user?.name}
+            </p>
             <button onClick={logout} className="text-sm text-cyan-600">
               Logout
             </button>

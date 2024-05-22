@@ -15,7 +15,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
 }) => {
   return (
     <Link
-      className="relative rounded-lg border border-cyan-900/0 bg-white p-4 transition-all hover:border-cyan-900/50 hover:bg-cyan-600/5"
+      className="relative rounded-lg border border-cyan-900/0 bg-white p-4 transition-all hover:border-cyan-900/50 hover:bg-cyan-600/5 dark:bg-gray-800"
       href={`/docs/${_id}`}
     >
       <img
@@ -29,8 +29,8 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
         }}
       />
 
-      <h4 className="mt-2 text-lg font-semibold">{title}</h4>
-      <p className="text-sm">{description}</p>
+      <h4 className="mt-2 text-lg font-semibold dark:text-gray-100">{title}</h4>
+      <p className="text-sm dark:text-gray-400">{description}</p>
     </Link>
   );
 };

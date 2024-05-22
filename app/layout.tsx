@@ -21,8 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <AuthContextProvider>
-          <Header />
-          {children}
+          <div className="dark">
+            <Header />
+            {children}
+          </div>
         </AuthContextProvider>
 
         <Sonner className="toaster group" />
