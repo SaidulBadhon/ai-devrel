@@ -31,18 +31,18 @@ export default function Page({ params }: { params: { code: string } }) {
         saveUserData(res.data);
 
         toast.success(
-          "You have been successfully authenticated! Redirecting..."
+          "You have been successfully authenticated! Redirecting...",
         );
 
         // Redirect to the dashboard
-        router.push("/dashboard");
+        router.push("/");
       })
       .catch(() => {
         // Redirect to the login page
         router.push("/login");
 
         toast.error(
-          "An error occurred while authenticating you. Please try again."
+          "An error occurred while authenticating you. Please try again.",
         );
       });
   }, []);
