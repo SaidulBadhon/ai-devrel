@@ -11,7 +11,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="outline-b bg-gray-100 dark:bg-gray-900">
+    <header className="outline-b bg-slate-200/40 dark:bg-gray-900">
       <div className="container relative mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-4">
           <Link href="/">
